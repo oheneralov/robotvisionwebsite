@@ -6,7 +6,12 @@ import { Injectable } from '@angular/core';
 export class BackendService {
 
   constructor() { }
-  getPage(){
-	  return 'Welcome'
+  getPage(pageName = '') {
+    const pageInfo: object = {
+      title: `title for ${pageName}`,
+      content: `content info for ${pageName}`
+    }
+
+    return pageInfo;
   }
 }

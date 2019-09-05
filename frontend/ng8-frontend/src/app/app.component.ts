@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {BackendService} from './backend.service'
 
 @Component({
   selector: 'app-root',
@@ -8,7 +7,6 @@ import {BackendService} from './backend.service'
 })
 export class AppComponent {
   title = 'Robot vision';
-  constructor(private readonly backendService: BackendService){
-	  
+  constructor() {
   }
 }
