@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BackendService } from './../backend.service';
 
 @Component({
   selector: 'app-contacts',
@@ -8,12 +9,15 @@ import { Component, OnInit } from '@angular/core';
 export class ContactsComponent implements OnInit {
   public content: string;
   public title: string;
-  constructor() {
-    this.content = 'Contacts content';
-    this.title = 'Title content'
-   }
+  public pageInfo: any;
+
+  constructor(private readonly backendService: BackendService) {
+  }
 
   ngOnInit() {
+    this.pageInfo = this.backendService.getPage('contacts');
+    this.title = this.pageInfo.title;
+    this.content = this.pageInfo.content;
   }
 
 }
